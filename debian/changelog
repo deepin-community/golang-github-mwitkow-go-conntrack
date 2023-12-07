@@ -1,5 +1,69 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-github-mwitkow-go-conntrack (0.0~git20190716.2f06839-3) unstable; urgency=medium
 
-  * Initial release
+  * Team upload.
+  * Skip flaky TestMonitoringNormalConns.
+    The sleep hack in previous patch doesn't work always.
+  * Update Standards-Version to 4.6.2 (no changes)
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Shengjing Zhu <zhsj@debian.org>  Tue, 07 Feb 2023 01:48:51 +0800
+
+golang-github-mwitkow-go-conntrack (0.0~git20190716.2f06839-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+  [ Shengjing Zhu ]
+  * Update uscan watch file to track git HEAD version
+  * Update maintainer address to team+pkg-go@tracker.debian.org
+  * Update Section to golang
+  * Bump debhelper-compat to 13
+  * Update Standards-Version to 4.5.1 (no changes)
+  * Add Rules-Requires-Root
+  * Drop test only depends golang-github-stretchr-testify-dev
+  * Make DH_GOLANG_EXCLUDES also work with dh_auto_install
+
+ -- Shengjing Zhu <zhsj@debian.org>  Thu, 28 Jan 2021 00:53:09 +0800
+
+golang-github-mwitkow-go-conntrack (0.0~git20190716.2f06839-1) unstable; urgency=medium
+
+  [ Dawid Dziurla ]
+  * increase delay in test
+
+  [ Martina Ferrari ]
+  * New upstream snapshot that fixes compilation errors from using now-removed
+    deprecated Prometheus APIs.
+  * Name update.
+  * Automated cme fixes.
+  * debian/control: Add new dependency.
+
+ -- Martina Ferrari <tincho@debian.org>  Sat, 02 Nov 2019 23:41:14 +0000
+
+golang-github-mwitkow-go-conntrack (0.0~git20161129.cc309e4-3) unstable; urgency=high
+
+  * Fix flaky test. Closes: #902468 (raising severity).
+  * Update Standards-Version with no changes.
+  * Bump debhelper compat level to 11.
+
+ -- Martina Ferrari <tincho@debian.org>  Thu, 30 Aug 2018 17:40:05 +0000
+
+golang-github-mwitkow-go-conntrack (0.0~git20161129.cc309e4-2) unstable; urgency=medium
+
+  [ Alexandre Viau ]
+  * Point Vcs-* urls to salsa.debian.org.
+
+  [ Martina Ferrari ]
+  * Automated cme fixes.
+  * debian/docs: Add README.md
+  * debian/control: Stop using legacy package name for the prometheus
+    client.
+
+ -- Martina Ferrari <tincho@debian.org>  Mon, 18 Jun 2018 20:57:58 +0000
+
+golang-github-mwitkow-go-conntrack (0.0~git20161129.cc309e4-1) unstable; urgency=medium
+
+  * Initial release (Closes: 883898)
+
+ -- Martina Ferrari <tincho@debian.org>  Sat, 09 Dec 2017 00:30:41 +0000

@@ -1,15 +1,41 @@
-Source: template-repository
-Section: unknown
+Source: golang-github-mwitkow-go-conntrack
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Martina Ferrari <tincho@debian.org>,
+Section: golang
+Testsuite: autopkgtest-pkg-go
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends: debhelper-compat (= 13),
+               dh-golang,
+               golang-any,
+               golang-github-jpillora-backoff-dev,
+               golang-github-prometheus-client-golang-dev,
+               golang-github-stretchr-testify-dev,
+               golang-golang-x-net-dev,
+Standards-Version: 4.6.2
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-mwitkow-go-conntrack
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-mwitkow-go-conntrack.git
+Homepage: https://github.com/mwitkow/go-conntrack
+Rules-Requires-Root: no
+XS-Go-Import-Path: github.com/mwitkow/go-conntrack
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: golang-github-mwitkow-go-conntrack-dev
+Architecture: all
+Depends: golang-github-jpillora-backoff-dev,
+         golang-github-prometheus-client-golang-dev,
+         golang-golang-x-net-dev,
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: Go middleware for net.Conn tracking
+ Prometheus (https://prometheus.io/) monitoring and x/net/trace
+ (https://godoc.org/golang.org/x/net/trace#EventLog) tracing wrappers for
+ net.Conn, both inbound (net.Listener) and outbound (net.Dialer).
+ .
+ Go standard library does a great job of doing "the right" things with
+ your connections: http.Transport pools outbound ones, and http.Server
+ sets good Keep Alive defaults.  However, it is still easy to get it
+ wrong.
+ .
+ That's why you should be able to monitor (using Prometheus) how many
+ connections your Go frontend servers have inbound, and how big are the
+ connection pools to your backends. You should also be able to inspect
+ your connection without ssh and netstat.
